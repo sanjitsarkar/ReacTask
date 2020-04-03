@@ -29,7 +29,8 @@ const todosRouter = require('./routes/todos');
 app.use('/todos',todosRouter);
 
 
-
+if(process.env.NODE_ENV !== 'production')
+{
   app.use(express.static('client/build'));
   console.log('Hello');
   app.get('*',(req,res)=>
@@ -38,7 +39,7 @@ app.use('/todos',todosRouter);
 res.sendFile(path.resolve(__dirname,'client','build','index.html'));
   });
   console.log('Hi');
-
+}
 io.on('connection',(socket)=>
 {
   socket.on('add',(data)=>
