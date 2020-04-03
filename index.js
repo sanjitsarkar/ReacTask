@@ -18,10 +18,10 @@ console.log("Connected");
 const port = process.env.PORT || 5000;
 
 
-app.get('/',(req,res)=>
-{
-res.json("Hello");
-});
+// app.get('/',(req,res)=>
+// {
+// res.json("Hello");
+// });
 
 const todosRouter = require('./routes/todos');
 
