@@ -3,7 +3,7 @@ import React,{useEffect,useState,useContext} from 'react';
 import Todo from './Todo';
 import axios from 'axios';
 import io from 'socket.io-client';
-const socket = io('https://reactask.herokuapp.com/');
+// const socket = io('https://reactask.herokuapp.com/');
 
 
 
@@ -23,19 +23,19 @@ const TodoList = ()=>
   const [showDesc,setDescShow] = useState(false);
   const [showPriority,setPriorityShow] = useState(false);
   const [showDate,setDateShow] = useState(false);
-  useEffect(() => {
-    socket.on('add',({title,desc,date,priority})=>
-    {
-  setTitle(title);
-  setDesc(desc);
-  setPriority(priority);
-  setDate(date);
+  // useEffect(() => {
+  //   socket.on('add',({title,desc,date,priority})=>
+  //   {
+  // setTitle(title);
+  // setDesc(desc);
+  // setPriority(priority);
+  // setDate(date);
 
-    });
+  //   });
     
    
    
-  },[title,desc,priority,date]);
+  // },[title,desc,priority,date]);
   async function getTodos()
   {
     const todo = await axios.get('https://reactask.herokuapp.com/todos/');
@@ -79,7 +79,7 @@ const  addTodo = async (e)=>
   {
     getTodos();
   },[]);
-  socket.emit('add',{title,desc,date,priority});
+  // socket.emit('add',{title,desc,date,priority});
  
      
   
