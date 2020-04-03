@@ -29,7 +29,7 @@ const todosRouter = require('./routes/todos');
 app.use('/todos',todosRouter);
 
 
-if(process.env.NODE_ENV !== 'production')
+if(process.env.NODE_ENV === 'production')
 {
   app.use(express.static('client/build'));
   console.log('Hello');
