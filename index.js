@@ -35,6 +35,7 @@ if(process.env.NODE_ENV === 'production')
   console.log('Hello');
   app.get('*',(req,res)=>
   {
+    console.log("React");
 res.sendFile(path.resolve(__dirname,'client','build','index.html'));
   });
   console.log('Hi');
