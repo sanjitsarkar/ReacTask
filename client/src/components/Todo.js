@@ -26,7 +26,7 @@ export default function Todo({t,showTodo}) {
     e.preventDefault();
     const id = e.target.id;
   
-  const todo = await axios.delete(`http://localhost:5000/todos/${id}`);
+  const todo = await axios.delete(`https://reactask.herokuapp.com/todos/${id}`);
   
   showTodo();
 
@@ -69,7 +69,7 @@ const  updateTodo = async (e)=>
 
 console.log(newTodo);
 console.log(id);
-const newT = await axios.post(`http://localhost:5000/todos/update/${id}`,newTodo);
+const newT = await axios.post(`https://reactask.herokuapp.com/todos/update/${id}`,newTodo);
 
 setDateShow(false);
 setTitleShow(false);

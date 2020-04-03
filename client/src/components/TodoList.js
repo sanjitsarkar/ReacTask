@@ -3,7 +3,7 @@ import React,{useEffect,useState,useContext} from 'react';
 import Todo from './Todo';
 import axios from 'axios';
 import io from 'socket.io-client';
-const socket = io('http://localhost:5000');
+const socket = io('https://reactask.herokuapp.com/');
 
 
 
@@ -38,7 +38,7 @@ const TodoList = ()=>
   },[title,desc,priority,date]);
   async function getTodos()
   {
-    const todo = await axios.get('http://localhost:5000/todos/');
+    const todo = await axios.get('https://reactask.herokuapp.com/todos/');
     setTodos(todo.data);
   // setTodos(todo.json());
   console.log(todo.data[0]);
@@ -54,7 +54,7 @@ const  addTodo = async (e)=>
      date
    };
   console.log(newTodo);
-  const newT = await axios.post(`http://localhost:5000/todos/add/`,newTodo);
+  const newT = await axios.post(`https://reactask.herokuapp.com/todos/add/`,newTodo);
   
 
 
